@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girlfriend Facts</title>
+    <style>
+        body {
+            background-color: #ffcccc;
+            font-family: Arial, sans-serif;
+            color: #900;
+            text-align: center;
+            background-image: url('images/heart.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #900;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c00;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Girlfriend Facts</h1>
+        <button id="show-facts">Show Facts</button>
+        <ul id="facts-list"></ul>
+    </div>
+    <script>
+        const facts = [
+            "Girlfriends often provide emotional support and companionship.",
+            "Communication is key in maintaining a healthy relationship.",
+            "Many girlfriends enjoy sharing experiences and creating memories together.",
+            "Trust and honesty are fundamental components of a strong relationship.",
+            "Girlfriends may have different love languages, such as acts of service or quality time.",
+            "Celebrating milestones and achievements together can strengthen the bond.",
+            "Girlfriends often appreciate thoughtful gestures and surprises.",
+            "Conflict resolution skills are important for overcoming disagreements.",
+            "Shared interests and hobbies can enhance the relationship.",
+            "Support for each other's personal growth is vital for a healthy partnership."
+        ];
+
+        document.getElementById('show-facts').addEventListener('click', () => {
+            const factsList = document.getElementById('facts-list');
+            factsList.innerHTML = ''; // Clear previous facts
+            facts.forEach(fact => {
+                const li = document.createElement('li');
+                li.textContent = fact;
+                li.classList.add('fade-in');
+                factsList.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>
